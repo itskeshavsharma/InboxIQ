@@ -44,7 +44,10 @@ def analyze_message(text):
         'special_chars': special_chars,
         'caps_ratio': caps_ratio
     }
-
+@app.route('/ping', methods=['GET', 'HEAD'])
+def ping():
+    return "OK", 200
+    
 @app.route('/')
 def index():
     return render_template('index.html')
